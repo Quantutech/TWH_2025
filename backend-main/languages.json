@@ -1,0 +1,64 @@
+{
+  "languages": [
+    {
+      "name": "English"
+    },
+    {
+      "name": "Mandarin Chinese"
+    },
+    {
+      "name": "Hindi"
+    },
+    {
+      "name": "Spanish"
+    },
+    {
+      "name": "French"
+    },
+    {
+      "name": "Standard Arabic"
+    },
+    {
+      "name": "Bengali"
+    },
+    {
+      "name": "Portuguese"
+    },
+    {
+      "name": "Russian"
+    },
+    {
+      "name": "Urdu"
+    },
+    {
+      "name": "Indonesian"
+    },
+    {
+      "name": "German"
+    },
+    {
+      "name": "Japanese"
+    },
+    {
+      "name": "Marathi"
+    },
+    {
+      "name": "Telugu"
+    },
+    {
+      "name": "Turkish"
+    },
+    {
+      "name": "Tamil"
+    },
+    {
+      "name": "Yue Chinese (Cantonese)"
+    },
+    {
+      "name": "Vietnamese"
+    },
+    {
+      "name": "Korean"
+    }
+  ]
+}

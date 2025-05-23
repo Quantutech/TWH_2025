@@ -1,0 +1,85 @@
+<mjml>
+  <mj-head>
+    <mj-font name="Inter" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" />
+    <mj-attributes>
+      <mj-all font-family="Inter, sans-serif" />
+      <mj-text font-size="16px" color="#356985" line-height="24px" />
+      <mj-button background-color="#4F88FF" color="#ffffff" font-weight="600" border-radius="6px" padding="12px 24px" font-size="16px" />
+    </mj-attributes>
+  </mj-head>
+  <mj-body background-color="#F1F9FA">
+    <mj-wrapper padding="10px">
+      <!-- Header Logo -->
+      <mj-section background-color="#ffffff" padding="24px 24px 0">
+        <mj-column>
+          <mj-image src="cid:logo_cid" alt="TeleWellness Hub Logo" width="180px" align="left" />
+        </mj-column>
+      </mj-section>
+
+      <!-- Main Content -->
+      <mj-section background-color="#ffffff" padding="24px">
+        <mj-column>
+          <mj-text font-size="24px" color="#356985" font-weight="400" padding-bottom="16px">
+            Hi Olivia,
+          </mj-text>
+
+          <mj-text color="#356985" padding-bottom="8px">
+            Welcome to Untitled! You're already on your way to creating beautiful visual products.
+          </mj-text>
+
+          <mj-text color="#356985" padding-bottom="24px">
+            We've created a quick intro video to get you up and running as soon as possible. If you have any questions, <a href="#" style="color: #4F88FF; text-decoration: underline;">please get in touch</a>.
+          </mj-text>
+
+          <!-- Video Thumbnail Section -->
+          <mj-image src="cid:video_thumbnail" alt="Introduction Video" width="552px" border-radius="8px" href="#" />
+
+          <mj-text color="#356985" padding-top="24px">
+            Thanks,<br />
+            The team
+          </mj-text>
+        </mj-column>
+      </mj-section>
+
+      <!-- App Download Section -->
+      <mj-section background-color="#ffffff" padding="24px">
+        <mj-column>
+          <mj-text font-weight="600" font-size="18px" color="#356985" padding-bottom="8px" align="center">
+            Download the app
+          </mj-text>
+          <mj-text color="#356985" padding-bottom="16px" align="center">
+            Get the most of Untitled by installing our new mobile app.
+          </mj-text>
+        </mj-column>    
+      </mj-section>
+      <mj-section background-color="#ffffff" padding="24px">
+        <mj-group>
+          <mj-column width="50%">
+            <mj-image src="cid:app_store" alt="Download on App Store" href="#" align="center" />
+          </mj-column>
+          <mj-column width="50%">
+            <mj-image src="cid:google_play" alt="Get it on Google Play" href="#" align="center" />
+          </mj-column>
+        </mj-group>
+      </mj-section>
+
+      <!-- Footer -->
+      <mj-section background-color="#ffffff" padding="24px">
+        <mj-column>
+          <mj-social font-size="15px" icon-size="20px" mode="horizontal" align="center" padding-bottom="16px">
+            <mj-social-element href="#" src="cid:twitter_cid" padding="0 12px 0 0" />
+            <mj-social-element href="#" src="cid:facebook_cid" padding="0 12px 0 0" />
+            <mj-social-element href="#" src="cid:instagram_cid" padding="0" />
+          </mj-social>
+          <mj-text font-size="13px" color="#356985" align="center">
+            Untitled is committed to sustainable building. This email was sent with 200% carbon offset. If you'd prefer to not receive these emails, please <a href="#" style="color: #4F88FF; text-decoration: underline;">unsubscribe</a>.
+          </mj-text>
+          <mj-text font-size="13px" color="#356985" align="center">
+            © 2077 Untitled UI<br />
+            100 Smith Street, Melbourne VIC 3000
+          </mj-text>
+        </mj-column>
+      </mj-section>
+    </mj-wrapper>
+  </mj-body>
+</mjml> 

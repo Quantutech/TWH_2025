@@ -1,0 +1,72 @@
+<mjml>
+  <mj-head>
+    <mj-font name="Inter" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" />
+    <mj-attributes>
+      <mj-all font-family="Inter, sans-serif" />
+      <mj-text font-size="16px" color="#356985" line-height="24px" />
+      <mj-button background-color="#4F88FF" color="#ffffff" font-weight="600" border-radius="6px" padding="12px 24px" font-size="16px" />
+    </mj-attributes>
+  </mj-head>
+  <mj-body background-color="#F1F9FA">
+    <mj-wrapper padding="10px">
+      <!-- Header -->
+      <mj-section background-color="#ffffff" padding="24px">
+        <mj-column width="70%">
+          <mj-image src="cid:logo_cid" alt="TeleWellness Hub Logo" width="180px" align="left" />
+        </mj-column>
+        <mj-column width="30%">
+          <mj-text align="right">
+            <a href="#" style="color: #356985; text-decoration: none;">Log in</a>
+          </mj-text>
+        </mj-column>
+      </mj-section>
+
+      <!-- Main Content -->
+      <mj-section background-color="#ffffff" padding="24px">
+        <mj-column>
+          <mj-text font-size="32px" color="#1D2939" font-weight="600" padding-bottom="24px" align="center">
+            How to get up and running as soon as possible
+          </mj-text>
+
+          <mj-text color="#356985" padding-bottom="24px" align="center">
+            We've created a quick intro video to get you up and running as soon as possible. Don't hesitate to <a href="#" style="color: #4F88FF; text-decoration: underline;">get in touch</a>.
+          </mj-text>
+
+          <!-- Video Thumbnail Section -->
+          <mj-image src="cid:video_thumbnail" alt="How to get started" width="552px" border-radius="8px" href="#" />
+          
+          <!-- Watch Video Button -->
+          <mj-button href="#" background-color="#4F88FF" width="200px" align="center">
+           Watch video
+          </mj-button>
+        </mj-column>
+      </mj-section>
+
+      <!-- Footer -->
+      <mj-section background-color="#ffffff" padding="24px">
+        <mj-column>
+          <mj-text font-size="13px" color="#356985" >
+            This email was sent to <a href="mailto:olivia@untitledui.com" style="color: #4F88FF; text-decoration: underline;">olivia@untitledui.com</a>. If you'd rather not receive this kind of email, you can <a href="#" style="color: #4F88FF; text-decoration: underline;">unsubscribe</a> or <a href="#" style="color: #4F88FF; text-decoration: underline;">manage your email preferences</a>.
+          </mj-text>
+          <mj-text font-size="13px" color="#356985" padding-top="16px">
+            © 2077 TeleWellness Hub, 100 Smith Street, Melbourne VIC 3000
+          </mj-text>
+        </mj-column>
+      </mj-section>
+
+      <!-- Social Media Footer -->
+      <mj-section background-color="#ffffff" padding="24px">
+        <mj-column width="50%">
+          <mj-image src="cid:logo_cid" alt="TeleWellness Hub Logo" width="180px" align="left" />
+        </mj-column>
+        <mj-column width="50%">
+          <mj-social font-size="15px" icon-size="20px" mode="horizontal" align="right">
+            <mj-social-element href="#" src="cid:twitter_cid" padding="0 12px 0 0" />
+            <mj-social-element href="#" src="cid:facebook_cid" padding="0 12px 0 0" />
+            <mj-social-element href="#" src="cid:instagram_cid" padding="0" />
+          </mj-social>
+        </mj-column>
+      </mj-section>
+    </mj-wrapper>
+  </mj-body>
+</mjml> 

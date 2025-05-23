@@ -1,0 +1,74 @@
+<mjml>
+  <mj-head>
+    <mj-font name="Inter" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" />
+    <mj-attributes>
+      <mj-all font-family="Inter, sans-serif" />
+      <mj-text font-size="16px" color="#356985" line-height="24px" />
+      <mj-button background-color="#4F88FF" color="#ffffff" font-weight="600" border-radius="6px" padding="12px 24px" font-size="16px" />
+    </mj-attributes>
+  </mj-head>
+  <mj-body background-color="#F1F9FA">
+    <mj-wrapper padding="10px">
+      <!-- Header -->
+      <mj-section background-color="#ffffff" padding="24px">
+        <mj-column>
+          <mj-image src="cid:logo_cid" alt="TeleWellness Hub Logo" width="180px" align="left" />
+        </mj-column>
+      </mj-section>
+
+      <!-- Main Content -->
+      <mj-section background-color="#ffffff" padding="24px">
+        <mj-column>
+          <!-- Video Thumbnail Section -->
+          <mj-image src="cid:video_thumbnail" alt="Welcome Video" width="552px" border-radius="8px" href="#" />
+
+          <mj-text font-size="26px" color="#1D2939" font-weight="600" padding-top="24px" padding-bottom="16px">
+            Welcome to TeleWellness Hub!
+          </mj-text>
+
+          <mj-text color="#356985" padding-bottom="24px">
+            Hi Olivia, thanks for checking out Untitled. Here are a few tips to help you get up and running as soon as possible. If you have any questions, just reply to this email — we'll be happy to hear from you!
+          </mj-text>
+
+          <!-- Action Buttons -->
+
+        </mj-column>
+      </mj-section>
+      <mj-section  background-color="#ffffff">
+        <mj-column>
+          <mj-button href="#" background-color="#ffffff" color="#344054" border="1px solid #D0D5DD" width="180px">
+            <img src="cid:play_icon" style="vertical-align: middle; margin-right: 8px;width: 20px;height: 20px;color: #4F88FF;" /> Watch intro
+          </mj-button>
+        </mj-column>
+        <mj-column>
+          <mj-button href="#" background-color="#4F88FF" width="180px"> 
+            Log in
+          </mj-button>
+        </mj-column>
+      </mj-section>
+      <!-- Footer -->
+      <mj-section background-color="#ffffff" padding="24px">
+        <mj-column>
+          <mj-text font-size="13px" color="#356985">
+            You're receiving this email because you subscribed to receive marketing emails. If you'd prefer not to receive these emails, please <a href="#" style="color: #4F88FF; text-decoration: underline;">unsubscribe</a>.
+          </mj-text>
+
+          <mj-text font-size="13px" color="#356985" padding-top="16px" align="center">
+            <a href="#" style="color: #356985; text-decoration: none; padding-right: 16px;">Terms</a>
+            <a href="#" style="color: #356985; text-decoration: none; padding-right: 16px;">Privacy</a>
+            <a href="#" style="color: #356985; text-decoration: none; padding-right: 16px;">Cookies</a>
+            <a href="#" style="color: #356985; text-decoration: none;">Contact us</a>
+          </mj-text>
+
+          <mj-text font-size="13px" color="#356985" padding-top="16px" align="center">
+            © 2077 TeleWellness Hub
+          </mj-text>
+
+          <mj-text font-size="13px" color="#356985" padding-top="16px" align="center">
+            100 Smith Street, Melbourne VIC 3000
+          </mj-text>
+        </mj-column>
+      </mj-section>
+    </mj-wrapper>
+  </mj-body>
+</mjml>

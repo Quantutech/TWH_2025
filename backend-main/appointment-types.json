@@ -1,0 +1,20 @@
+{
+    "appointmentTypes": [
+        {
+            "name": "in-person",
+            "type": "in-person"
+        },
+        {
+            "name": "video",
+            "type": "online"
+        },
+        {
+            "name": "phone",
+            "type": "online"
+        },
+        {
+            "name": "text/chat",
+            "type": "online"
+        }
+    ]
+}

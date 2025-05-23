@@ -1,0 +1,121 @@
+<mjml>
+  <mj-head>
+    <mj-font
+      name="Inter"
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap"
+    />
+    <mj-attributes>
+      <mj-all font-family="Inter, sans-serif" />
+      <mj-text font-size="16px" color="#4A5568" line-height="24px" />
+      <mj-button
+        background-color="#4F88FF"
+        color="#ffffff"
+        font-weight="600"
+        border-radius="6px"
+        padding="16px 24px"
+        font-size="16px"
+      />
+    </mj-attributes>
+    <mj-style>
+      .otp-digit {
+        display: inline-block;
+        width: 40px;
+        height: 40px;
+        border: 1px solid #3978D7;
+        border-radius: 6px;
+        margin: 0 4px;
+        text-align: center;
+        line-height: 40px;
+        font-size: 24px;
+        color: #3978D7;
+      }
+    </mj-style>
+  </mj-head>
+  <mj-body background-color="#ffffff">
+    <!-- Header Logo -->
+    <mj-section padding="24px">
+      <mj-column>
+        <mj-image
+          src="cid:logo_cid"
+          alt="TeleWellness Hub Logo"
+          width="200px"
+          height="20px"
+          align="left"
+        />
+      </mj-column>
+    </mj-section>
+
+    <!-- Main Content -->
+    <mj-section padding="0 24px">
+      <mj-column>
+        <mj-text font-size="16px">
+          Hi {{name}},
+        </mj-text>
+        
+        <mj-text>
+          This is your verification code:
+        </mj-text>
+
+        <!-- OTP Numbers -->
+        <mj-text align="left" padding-top="16px" padding-bottom="16px">
+          <div style="display: flex; gap: 8px;">
+            <span class="otp-digit">{{digit1}}</span>
+            <span class="otp-digit">{{digit2}}</span>
+            <span class="otp-digit">{{digit3}}</span>
+            <span class="otp-digit">{{digit4}}</span>
+          </div>
+        </mj-text>
+
+        <mj-text>
+          This code will only be valid for the next 5 minutes. If the code does not work, you can use this login verification link:
+        </mj-text>
+        <mj-text padding-top="16px">
+          Thanks,<br />
+          The team
+        </mj-text>
+      </mj-column>
+    </mj-section>
+
+    <!-- Footer -->
+    <mj-section padding="40px 24px 24px 24px">
+      <mj-column>
+        <mj-text font-size="13px" color="#718096">
+          This email was sent to
+          <a href="mailto:{{email}}" style="color: #3978D7">{{email}}</a>. If you'd rather not receive this kind of email, you can
+          <a href="#" style="color: #3978D7">unsubscribe</a> or
+          <a href="#" style="color: #3978D7">manage your email preferences</a>.
+        </mj-text>
+        <mj-text font-size="13px" color="#718096">
+          © 2077 TeleWellness Hub, 100 Smith Street, Melbourne VIC 3000
+        </mj-text>
+      </mj-column>
+    </mj-section>
+
+    <!-- Bottom Logo + Social Media -->
+    <mj-section padding="0 24px 48px 24px">
+      <mj-column width="50%">
+        <mj-image
+          src="cid:logo_cid"
+          alt="TeleWellness Hub"
+          width="200px"
+          height="20px"
+          align="left"
+        />
+      </mj-column>
+      <mj-column width="50%" padding-top="10px">
+        <mj-social
+          font-size="15px"
+          icon-size="20px"
+          mode="horizontal"
+          align="right"
+          padding="0"
+          padding-top="10px"
+        >
+          <mj-social-element href="#" src="cid:twitter_cid" padding="0 8px"/>
+          <mj-social-element href="#" src="cid:facebook_cid" padding="0 8px"/>
+          <mj-social-element href="#" src="cid:instagram_cid" padding="0 8px"/>
+        </mj-social>
+      </mj-column>
+    </mj-section>
+  </mj-body>
+</mjml> 

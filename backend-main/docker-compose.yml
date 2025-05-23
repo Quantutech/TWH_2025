@@ -1,0 +1,16 @@
+version: "3.8"
+
+services:
+  backend:
+    build:
+      context: .
+    container_name: backend-app
+    ports:
+      - "3000:3000"
+    volumes:
+      - uploads:/usr/src/app/uploads
+    environment:
+      - NODE_ENV=production
+
+volumes:
+  uploads:

@@ -1,0 +1,2581 @@
+{
+	"info": {
+		"_postman_id": "90aca1c6-6164-4f71-8955-15056ff4c1cf",
+		"name": "Telewellness Hub",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "24923848"
+	},
+	"item": [
+		{
+			"name": "Client",
+			"item": [
+				{
+					"name": "Login",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"email\":\"drapius@hotmail.com\",\r\n    \"password\":\"Safodasilva01*\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseUrl}}/client/login",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"client",
+								"login"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Evaluate",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjEsImlhdCI6MTc0MzA1ODg2OSwiZXhwIjoxNzQ0MzU0ODY5fQ.YdByqfl8Cr2k6watq8dtbv-rQ8jmNLocoBL9B4KIkrQ",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"providerId\": 1,\r\n    \"comment\": \"TEXTEX\",\r\n    \"rating\": 2,\r\n    \"suggestion\":false,\r\n    \"waitingTime\":2\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseUrl}}/client/evaluate",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"client",
+								"evaluate"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Evaluate",
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{baseUrl}}/client/evaluate?providerId=1",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"client",
+								"evaluate"
+							],
+							"query": [
+								{
+									"key": "providerId",
+									"value": "1"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Avg",
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{baseUrl}}/client/average?providerId=1",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"client",
+								"average"
+							],
+							"query": [
+								{
+									"key": "providerId",
+									"value": "1"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Register",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"firstName\": \"Draco\",\r\n  \"lastName\": \"Impius\",\r\n  \"email\": \"emrebaskayaaa@gmail.com\",\r\n  \"password\": \"Safodasilva01*\",\r\n  \"confirmPassword\": \"Safodasilva01*\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseUrl}}/client/register",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"client",
+								"register"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Refresh Token",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"refreshToken\":\"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjEsImlhdCI6MTczNzk4Nzg2NCwiZXhwIjoxNzQwNTc5ODY0fQ.buKLJSC60-yuCSXs8Qinnav6cBvOK1V_sCGUtIf7rS8\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseUrl}}/client/refresh-token",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"client",
+								"refresh-token"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Reset Password",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"token\":\"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6NSwiZW1haWwiOiJlbXJlYmFza2F5YWFhQGdtYWlsLmNvbSIsImlhdCI6MTc0NDQwMjM2MiwiZXhwIjoxNzQ0NDAyNjYyfQ.f7P69trVfs3XIh8VavfWjo2mGruz8_6rjmJTAPC3zd4\",\r\n    \"newPassword\":\"Emre123*\",\r\n    \"newPasswordConfirmation\":\"Emre123*\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseUrl}}/client/reset-password",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"client",
+								"reset-password"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Change Password",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"newPassword\":\"Emre123*123\",\r\n    \"currentPassword\":\"Emre123*\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseUrl}}/client/change-password",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"client",
+								"change-password"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Request email change",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"url": {
+							"raw": "{{baseUrl}}/client/request-email-change",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"client",
+								"request-email-change"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Confirm Email Change",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"newEmail\":\"emrebaskayaaaa@gmail.com\",\r\n    \"verificationCode\":\"1234\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseUrl}}/client/confirm-email-change",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"client",
+								"confirm-email-change"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Send Verification Email",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"email\":\"drapius@hotmail.com\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseUrl}}/client/send-verification-email",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"client",
+								"send-verification-email"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Verify Email",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"token\":\"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyaWQiOjUsImVtYWlsIjoiZW1yZWJhc2theWFhYUBnbWFpbC5jb20iLCJpYXQiOjE3NDQ0MDE5NTUsImV4cCI6MTc0NDQwMjI1NX0.R8SxuLPU0iQPOgOosUvrNfcRBdiCSfk_ThBLRCsGgXA\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseUrl}}/client/verify-email",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"client",
+								"verify-email"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Forgot Password",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"email\":\"emrebaskayaaa@gmail.com\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseUrl}}/client/forgot-password",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"client",
+								"forgot-password"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Google Login",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{baseUrl}}/client/google/login?code=21312381729",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"client",
+								"google",
+								"login"
+							],
+							"query": [
+								{
+									"key": "code",
+									"value": "21312381729"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Google Callback",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{baseUrl}}/client/google/callback?code=213123127",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"client",
+								"google",
+								"callback"
+							],
+							"query": [
+								{
+									"key": "code",
+									"value": "213123127"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Notification Mark Read",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjEsImlhdCI6MTc0MzY4MTI0OCwiZXhwIjoxNzQ0OTc3MjQ4fQ.S13Wgxe8O_7trdcAnszCmAP1WR43mrvS3-0oz-D5y5g",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PATCH",
+						"header": [],
+						"url": {
+							"raw": "{{baseUrl}}/client/notification/1/read",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"client",
+								"notification",
+								"1",
+								"read"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get Notification",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjEsImlhdCI6MTc0MzY5NzYwMCwiZXhwIjoxNzQ0OTkzNjAwfQ.uiwdulwIt9NGVq_CYdv47cyZCptsWMSHj3gkginASBg",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{baseUrl}}/client/notification/appointment/1",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"client",
+								"notification",
+								"appointment",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get Notification Appointment",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjEsImlhdCI6MTc0MzY5NzYwMCwiZXhwIjoxNzQ0OTkzNjAwfQ.uiwdulwIt9NGVq_CYdv47cyZCptsWMSHj3gkginASBg",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{baseUrl}}/client/notification/appointment/1?limit=10&page=1",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"client",
+								"notification",
+								"appointment",
+								"1"
+							],
+							"query": [
+								{
+									"key": "limit",
+									"value": "10"
+								},
+								{
+									"key": "page",
+									"value": "1"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get Notification Support",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjEsImlhdCI6MTc0MzY5NzYwMCwiZXhwIjoxNzQ0OTkzNjAwfQ.uiwdulwIt9NGVq_CYdv47cyZCptsWMSHj3gkginASBg",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{baseUrl}}/client/notification/support/1",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"client",
+								"notification",
+								"support",
+								"1"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Provider",
+			"item": [
+				{
+					"name": "Login",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"email\":\"mehmet3bulam@gmail.com\",\r\n    \"password\":\"Mehmet123*\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseUrl}}/provider/login",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"provider",
+								"login"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Register",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"firstName\": \"Emre\",\r\n  \"lastName\": \"Bsk\",\r\n  \"email\": \"emrebaskayaaa@gmail.com\",\r\n  \"password\": \"Emre123*\",\r\n  \"confirmPassword\": \"Emre123*\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseUrl}}/provider/register",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"provider",
+								"register"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Provider Update For Dashboard",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjUsInVzZXJTbHVnIjoiZW1yZS1iYXNrYXlhIiwiaXNFbWFpbFZlcmlmaWVkIjp0cnVlLCJpYXQiOjE3NDQ1NTk1MjgsImV4cCI6MTc0NTg1NTUyOH0.hYlCBL5kBuXMuDpQmeV44RrwaXJlnamAR7zyK08YOq0",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"firstName\": \"Emre\",\r\n    \"lastName\": \"x\",\r\n    \"middleName\": \"A\",\r\n    \"professionalTitle\": \"MD\",\r\n    \"licenseNumber\": 123456,\r\n    \"licenseState\": \"CA\",\r\n    \"yearsExperience\": 10,\r\n    \"education\": \"Harvard Medical School\",\r\n    \"bio\": \"Experienced healthcare provider specializing in internal medicine.\",\r\n    \"phoneNumber\": \"+1 5551234567\",\r\n    \"country\": \"USAa\",\r\n    \"state\": \"Abd\",\r\n    \"city\": \"Los Angeles\",\r\n    \"instagramUrl\": \"www.insata.com\",\r\n    \"youtubeUrl\": \"www.yote.com\",\r\n    \"zipCode\": 90001,\r\n    \"streetAddress\": \"123 Main Street, Apt 4B\",\r\n    \"appointmentCalenderType\":\"our_system / external\",\r\n    \"specialities\": [\r\n        1\r\n    ],\r\n    \"languages\": [\r\n        1\r\n    ],\r\n    \"insurances\": [\r\n        1\r\n    ],\r\n    \"appointmentTypes\": [\r\n        1\r\n    ],\r\n    \"lat\": 37.874641,\r\n    \"long\": 32.493156,\r\n    \"workingHours\": [\r\n        {\r\n            \"dayOfWeek\": \"monday\",\r\n            \"startTime\": \"08:00\",\r\n            \"endTime\": \"17:00\"\r\n        },\r\n         {\r\n            \"dayOfWeek\": \"friday\",\r\n            \"startTime\": \"08:00\",\r\n            \"endTime\": \"17:00\"\r\n        },\r\n        {\r\n            \"dayOfWeek\": \"tuesday\",\r\n            \"startTime\": \"10:00\",\r\n            \"endTime\": \"18:00\"\r\n        }\r\n    ]\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseUrl}}/provider/update-dashboard",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"provider",
+								"update-dashboard"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Provider Update",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjEsImlhdCI6MTc0MzI2MjgxMSwiZXhwIjoxNzQ0NTU4ODExfQ.3kznnVO9_kLP6w6hSDstzA3vaUXp5oBl_qM1XYhoCGw",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"firstName\": \"Emre\",\r\n    \"lastName\": \"x\",\r\n    \"middleName\": \"A\",\r\n    \"professionalTitle\": \"MD\",\r\n    \"licenseNumber\": 123456,\r\n    \"licenseState\": \"CA\",\r\n    \"yearsExperience\": 10,\r\n    \"education\": \"Harvard Medical School\",\r\n    \"bio\": \"Experienced healthcare provider specializing in internal medicine.\",\r\n    \"phoneNumber\": \"+1 5551234567\",\r\n    \"country\": \"USAa\",\r\n    \"state\": \"Abd\",\r\n    \"city\": \"Los Angeles\",\r\n    \"instagramUrl\": \"www.insata.com\",\r\n    \"youtubeUrl\": \"www.yote.com\",\r\n    \"zipCode\": 90001,\r\n    \"streetAddress\": \"123 Main Street, Apt 4B\",\r\n    \"appointmentCalenderType\":\"our_system / external\",\r\n    \"specialities\": [\r\n        1\r\n    ],\r\n    \"languages\": [\r\n        1\r\n    ],\r\n    \"insurances\": [\r\n        1\r\n    ],\r\n    \"appointmentTypes\": [\r\n        1\r\n    ],\r\n    \"lat\": 37.874641,\r\n    \"long\": 32.493156,\r\n    \"workingHours\": [\r\n        {\r\n            \"dayOfWeek\": \"monday\",\r\n            \"startTime\": \"08:00\",\r\n            \"endTime\": \"17:00\"\r\n        },\r\n        {\r\n            \"dayOfWeek\": \"tuesday\",\r\n            \"startTime\": \"10:00\",\r\n            \"endTime\": \"18:00\"\r\n        }\r\n    ]\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseUrl}}/provider/update",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"provider",
+								"update"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Refresh Token",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"refreshToken\":\"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjEsImlhdCI6MTczNzk4ODAyMSwiZXhwIjoxNzQwNTgwMDIxfQ._z2Ax66z1HFJWtDT9Y_PWaSJ5Fhenn0x4Y1P4la9rqI\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseUrl}}/provider/refresh-token",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"provider",
+								"refresh-token"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Reset Password",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"token\":\"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6ImVtcmViYXNrYXlhYWFAZ21haWwuY29tIiwiaWF0IjoxNzM3OTg4MDYwLCJleHAiOjE3MzkyODQwNjB9.KGqVKlzfPczjVzXskYX1ks2SdpU48iypvRD3Eaqy7h0\",\r\n    \"newPassword\":\"Emre1234*\",\r\n    \"newPasswordConfirmation\":\"Emre1234*\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseUrl}}/provider/reset-password",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"provider",
+								"reset-password"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Send Verification Email",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"email\":\"emrebaskayaaa@gmail.com\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseUrl}}/provider/send-verification-email",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"provider",
+								"send-verification-email"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Verify Email",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"token\":\"ey21376283127831268737126312\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseUrl}}/provider/verify-email",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"provider",
+								"verify-email"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Forgot Password",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"email\":\"emrebaskayaaa@gmail.com\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseUrl}}/provider/forgot-password",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"provider",
+								"forgot-password"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Google Login",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{baseUrl}}/provider/google/login?code=21312381729",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"provider",
+								"google",
+								"login"
+							],
+							"query": [
+								{
+									"key": "code",
+									"value": "21312381729"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Google Callback",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{baseUrl}}/provider/google/callback?code=213123127",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"provider",
+								"google",
+								"callback"
+							],
+							"query": [
+								{
+									"key": "code",
+									"value": "213123127"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Add Profile Image",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjEsImlhdCI6MTc0MDY2MjYzMiwiZXhwIjoxNzQxOTU4NjMyfQ.nuv9MCuBRWWmeEaOgytmVkHu3qVdIOKPvRNFuf6SkLk",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "file",
+									"type": "file",
+									"src": "/C:/Users/emreb/Downloads/YUKATEL İFTAR PROGRAMI (2).png"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{baseUrl}}/provider/upload/profile-image",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"provider",
+								"upload",
+								"profile-image"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Add Profile Intro Video",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjEsImlhdCI6MTc0MDY2MjYzMiwiZXhwIjoxNzQxOTU4NjMyfQ.nuv9MCuBRWWmeEaOgytmVkHu3qVdIOKPvRNFuf6SkLk",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "file",
+									"type": "file",
+									"src": []
+								}
+							]
+						},
+						"url": {
+							"raw": "{{baseUrl}}/provider/upload/profile-video-intro",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"provider",
+								"upload",
+								"profile-video-intro"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Set Availability",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjEsImlhdCI6MTc0MDY2MjYzMiwiZXhwIjoxNzQxOTU4NjMyfQ.nuv9MCuBRWWmeEaOgytmVkHu3qVdIOKPvRNFuf6SkLk",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"workingHours\": [\r\n        {\r\n            \"dayOfWeek\": \"Monday\",\r\n            \"startTime\": \"08:00\",\r\n            \"endTime\": \"17:00\"\r\n        },\r\n        {\r\n            \"dayOfWeek\": \"Tuesday\",\r\n            \"startTime\": \"10:00\",\r\n            \"endTime\": \"18:00\"\r\n        }\r\n    ]\r\n}\r\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseUrl}}/provider/set-availability",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"provider",
+								"set-availability"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get Me",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjEsInVzZXJTbHVnIjoibWVobWV0LWJ1bGFtIiwiaXNFbWFpbFZlcmlmaWVkIjp0cnVlLCJpYXQiOjE3NDQ1NTcxNTcsImV4cCI6MTc0NTg1MzE1N30._CQreqFvTFGsxYo7QkJWRjfd7X1FGXSY9DkR5qkYjAo",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{baseUrl}}/provider/me",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"provider",
+								"me"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get  Provider by slug",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjEsImlhdCI6MTc0MTM1NjA4MiwiZXhwIjoxNzQyNjUyMDgyfQ.nSBoIo0_kN_SwjC3fApWztPcVQQh_HnfEn7dg1a6nkQ",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{baseUrl}}/provider/:profileSlug",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"provider",
+								":profileSlug"
+							],
+							"variable": [
+								{
+									"key": "profileSlug",
+									"value": ""
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get Provider List",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjEsImlhdCI6MTc0MTM1NjA4MiwiZXhwIjoxNzQyNjUyMDgyfQ.nSBoIo0_kN_SwjC3fApWztPcVQQh_HnfEn7dg1a6nkQ",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{baseUrl}}/provider/list?page=1&limit=10&sort=7&lat=41.02&long=28.98",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"provider",
+								"list"
+							],
+							"query": [
+								{
+									"key": "page",
+									"value": "1"
+								},
+								{
+									"key": "limit",
+									"value": "10"
+								},
+								{
+									"key": "keyword",
+									"value": "",
+									"disabled": true
+								},
+								{
+									"key": "gender",
+									"value": "other",
+									"disabled": true
+								},
+								{
+									"key": "state",
+									"value": "California",
+									"disabled": true
+								},
+								{
+									"key": "languages",
+									"value": "1,2,3",
+									"disabled": true
+								},
+								{
+									"key": "insurances",
+									"value": "1",
+									"disabled": true
+								},
+								{
+									"key": "specialities",
+									"value": "1",
+									"disabled": true
+								},
+								{
+									"key": "isAvailable",
+									"value": "true",
+									"disabled": true
+								},
+								{
+									"key": "sort",
+									"value": "7"
+								},
+								{
+									"key": "lat",
+									"value": "41.02"
+								},
+								{
+									"key": "long",
+									"value": "28.98"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get Notification",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjEsImlhdCI6MTc0MzY3NDMwMSwiZXhwIjoxNzQ0OTcwMzAxfQ.FKDxxPrHW9A7HiOGwTgCX9zsAq_noS1sAC4xat_cjJk",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{baseUrl}}/provider/notification/1?limit=10&page=1&keyword=you",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"provider",
+								"notification",
+								"1"
+							],
+							"query": [
+								{
+									"key": "limit",
+									"value": "10"
+								},
+								{
+									"key": "page",
+									"value": "1"
+								},
+								{
+									"key": "keyword",
+									"value": "you"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get Notification Appointment",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjEsImlhdCI6MTc0MzY3NDMwMSwiZXhwIjoxNzQ0OTcwMzAxfQ.FKDxxPrHW9A7HiOGwTgCX9zsAq_noS1sAC4xat_cjJk",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{baseUrl}}/provider/notification/appointment/1?limit=10&page=1",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"provider",
+								"notification",
+								"appointment",
+								"1"
+							],
+							"query": [
+								{
+									"key": "limit",
+									"value": "10"
+								},
+								{
+									"key": "page",
+									"value": "1"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get Notification Support",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjEsImlhdCI6MTc0MzY3NDMwMSwiZXhwIjoxNzQ0OTcwMzAxfQ.FKDxxPrHW9A7HiOGwTgCX9zsAq_noS1sAC4xat_cjJk",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{baseUrl}}/provider/notification/support/1?limit=10&page=1",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"provider",
+								"notification",
+								"support",
+								"1"
+							],
+							"query": [
+								{
+									"key": "limit",
+									"value": "10"
+								},
+								{
+									"key": "page",
+									"value": "1"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get Appointment Stats  /Dashboard",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjEsImlhdCI6MTc0MzY3NDMwMSwiZXhwIjoxNzQ0OTcwMzAxfQ.FKDxxPrHW9A7HiOGwTgCX9zsAq_noS1sAC4xat_cjJk",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{baseUrl}}/provider/dashboard/appointment-stats",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"provider",
+								"dashboard",
+								"appointment-stats"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get Appointment Type Stats  /Dashboard",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjEsImlhdCI6MTc0MzY3NDMwMSwiZXhwIjoxNzQ0OTcwMzAxfQ.FKDxxPrHW9A7HiOGwTgCX9zsAq_noS1sAC4xat_cjJk",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{baseUrl}}/provider/dashboard/appointment-type-stats?type=daily",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"provider",
+								"dashboard",
+								"appointment-type-stats"
+							],
+							"query": [
+								{
+									"key": "type",
+									"value": "daily"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get Appointment Peak Times stats  /Dashboard Copy",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjEsImlhdCI6MTc0MzY3NDMwMSwiZXhwIjoxNzQ0OTcwMzAxfQ.FKDxxPrHW9A7HiOGwTgCX9zsAq_noS1sAC4xat_cjJk",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{baseUrl}}/provider/dashboard/appointment-peak-times-stats?type=daily",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"provider",
+								"dashboard",
+								"appointment-peak-times-stats"
+							],
+							"query": [
+								{
+									"key": "type",
+									"value": "daily"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Confirm Email Change",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"newEmail\":\"emrebaskayaaaa@gmail.com\",\r\n    \"verificationCode\":\"1234\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseUrl}}/provider/confirm-email-change",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"provider",
+								"confirm-email-change"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Send Verification Email",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"email\":\"drapius@hotmail.com\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseUrl}}/provider/send-verification-email",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"provider",
+								"send-verification-email"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Request email change",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"url": {
+							"raw": "{{baseUrl}}/provider/request-email-change",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"provider",
+								"request-email-change"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Admin",
+			"item": [
+				{
+					"name": "Add Insurances",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\":\"Test\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseUrl}}/util/insurances",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"util",
+								"insurances"
+							],
+							"query": [
+								{
+									"key": "name",
+									"value": "Test",
+									"disabled": true
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Add Language",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\":\"Test\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseUrl}}/util/languages",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"util",
+								"languages"
+							],
+							"query": [
+								{
+									"key": "name",
+									"value": "Test",
+									"disabled": true
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Add Specialties",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\":\"Test\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseUrl}}/util/specialities?name=Test",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"util",
+								"specialities"
+							],
+							"query": [
+								{
+									"key": "name",
+									"value": "Test"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Add States",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\":\"Test\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseUrl}}/util/states",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"util",
+								"states"
+							],
+							"query": [
+								{
+									"key": "name",
+									"value": "Test",
+									"disabled": true
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Contact Us",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"email\": \"emrebaskayaaa@gmail.com\",\r\n    \"firstName\": \"Emre\",\r\n    \"lastName\": \"Bks\",\r\n    \"phone\": \"0534723818\",\r\n    \"message\": \"Bu bir test mesaj\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseUrl}}/utils/contact-us",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"utils",
+								"contact-us"
+							],
+							"query": [
+								{
+									"key": "name",
+									"value": "Test",
+									"disabled": true
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get Insurances",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\":\"Test\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseUrl}}/util/insurances",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"util",
+								"insurances"
+							],
+							"query": [
+								{
+									"key": "name",
+									"value": "Test",
+									"disabled": true
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get Specialtiess",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseUrl}}/util/specialities?page=1&limit=10&keyword=",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"util",
+								"specialities"
+							],
+							"query": [
+								{
+									"key": "page",
+									"value": "1"
+								},
+								{
+									"key": "limit",
+									"value": "10"
+								},
+								{
+									"key": "name",
+									"value": "Test",
+									"disabled": true
+								},
+								{
+									"key": "keyword",
+									"value": ""
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get Languages",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\":\"Test\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseUrl}}/util/languages",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"util",
+								"languages"
+							],
+							"query": [
+								{
+									"key": "name",
+									"value": "Test",
+									"disabled": true
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get AppointmentTypes",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\":\"Test\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseUrl}}/util/appointment-types",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"util",
+								"appointment-types"
+							],
+							"query": [
+								{
+									"key": "name",
+									"value": "Test",
+									"disabled": true
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get States",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\":\"Test\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseUrl}}/address/states?page=1&limit=10&keyword=badakhshan&countryId=1",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"address",
+								"states"
+							],
+							"query": [
+								{
+									"key": "page",
+									"value": "1"
+								},
+								{
+									"key": "limit",
+									"value": "10"
+								},
+								{
+									"key": "keyword",
+									"value": "badakhshan"
+								},
+								{
+									"key": "countryId",
+									"value": "1"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get Country",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\":\"Test\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseUrl}}/address/countries?page=1&limit=10&keyword=",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"address",
+								"countries"
+							],
+							"query": [
+								{
+									"key": "page",
+									"value": "1"
+								},
+								{
+									"key": "limit",
+									"value": "10"
+								},
+								{
+									"key": "keyword",
+									"value": ""
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get Cities",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\":\"Test\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseUrl}}/address/cities?page=1&limit=10&keyword=&stateId=3459",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"address",
+								"cities"
+							],
+							"query": [
+								{
+									"key": "page",
+									"value": "1"
+								},
+								{
+									"key": "limit",
+									"value": "10"
+								},
+								{
+									"key": "keyword",
+									"value": ""
+								},
+								{
+									"key": "stateId",
+									"value": "3459"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Login",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"email\": \"bcgocer@gmail.com\",\n    \"password\": \"Telewellness01*\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseUrl}}/admin/login",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"admin",
+								"login"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Create",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjMsInVzZXJTbHVnIjoiam9obi1kb2UtMSIsImlzU3VwZXIiOmZhbHNlLCJyb2xlIjoiYWRtaW4iLCJpYXQiOjE3NDYyMTg4NzAsImV4cCI6MTc0NzUxNDg3MH0.D_GVI3ctjw_wvHGx9Rd0FFlJsbC3bf-VvVrbqIty2og",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"firstName\": \"John\",\n  \"lastName\": \"Doe\",\n  \"email\": \"john.doe@example.com\",\n  \"password\": \"StrongPass1!\",\n  \"confirmPassword\": \"StrongPass1!\",\n  \"profileSlug\": \"john-doe-admin\"\n}\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseUrl}}/admin/create",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"admin",
+								"create"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Me",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjEsImlhdCI6MTc0NDE0MjE4MCwiZXhwIjoxNzQ1NDM4MTgwfQ.2kQwpLXRpXdaVCFPGaGYa_g9IVg5puEmJAnJB2QRXFo",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{baseUrl}}/admin/me",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"admin",
+								"me"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Admin List",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjMsInVzZXJTbHVnIjoiam9obi1kb2UtMSIsImlzU3VwZXIiOmZhbHNlLCJyb2xlIjoiYWRtaW4iLCJpYXQiOjE3NDYyMTg5MjAsImV4cCI6MTc0NzUxNDkyMH0.fhbw7nH0W1NjVak450VOT0NpvlzJLNvdtN5Bdib_fjs",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{baseUrl}}/admin/management",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"admin",
+								"management"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Blog",
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{baseUrl}}/upload/blog?page=1&limit=10",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"upload",
+								"blog"
+							],
+							"query": [
+								{
+									"key": "page",
+									"value": "1"
+								},
+								{
+									"key": "limit",
+									"value": "10"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Image",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjEsInVzZXJTbHVnIjoiYWRtaW4tYWRtaW4iLCJpc1N1cGVyIjp0cnVlLCJyb2xlIjoiYWRtaW4iLCJpYXQiOjE3NDYyMTkyODIsImV4cCI6MTc0NzUxNTI4Mn0.UVbIDq0J8kblwQ-QeCufEzAE9pivC29piYfFcLj4-yA",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "title",
+									"value": "TITLE BUDUR GARDAS",
+									"type": "text"
+								},
+								{
+									"key": "content",
+									"value": "CONTENT BUDUR GARDAS",
+									"type": "text"
+								},
+								{
+									"key": "image",
+									"type": "file",
+									"src": "/Users/bulutgocer/Downloads/19cd5a9b-74b4-47fb-ba2d-1dc9497a2eb6.jpeg"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{baseUrl}}/upload/image",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"upload",
+								"image"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Blog",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjEsInVzZXJTbHVnIjoiYWRtaW4tYWRtaW4iLCJpc1N1cGVyIjp0cnVlLCJyb2xlIjoiYWRtaW4iLCJpYXQiOjE3NDYyMTkyODIsImV4cCI6MTc0NzUxNTI4Mn0.UVbIDq0J8kblwQ-QeCufEzAE9pivC29piYfFcLj4-yA",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "title",
+									"value": "TITLE BUDUR GARDAS",
+									"type": "text"
+								},
+								{
+									"key": "content",
+									"value": "CONTENT BUDUR GARDAS",
+									"type": "text"
+								},
+								{
+									"key": "file",
+									"type": "file",
+									"src": "/Users/bulutgocer/Downloads/ornek.html"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{baseUrl}}/upload/blog",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"upload",
+								"blog"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Appointment",
+			"item": [
+				{
+					"name": "Create Appointment",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjIsInVzZXJTbHVnIjoiYmFyaXMta2lzYWRhbCIsImlzRW1haWxWZXJpZmllZCI6dHJ1ZSwiaWF0IjoxNzQ0NTYwMDYzLCJleHAiOjE3NDU4NTYwNjN9.1ggP7Qgf_MeJi-125yrExE8OqP6kKx6NsKkTjDGowHA",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"slotTime\": \"2025-04-15T16:30:00.000Z\",\r\n    \"providerId\": 5,\r\n    \"insuranceId\": 1,\r\n    \"reason\": \"Routine check-up\",\r\n    \"appointmentTypeId\": 1\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseUrl}}/appointments/create",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"appointments",
+								"create"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Send Reminder",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjEsInVzZXJTbHVnIjoibWVobWV0LWJ1bGFtIiwiaXNFbWFpbFZlcmlmaWVkIjp0cnVlLCJpYXQiOjE3NDQ0MDQ2MzYsImV4cCI6MTc0NTcwMDYzNn0.6MdzOR1rUwSh2n9oJ78fpNNmX1x5VQGHwn_rrtl_ZJM",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"title\": \"Mehmetin Götten Yeme Randevusu Hatırlatma\",\r\n  \"message\": \"Mehmet Bulam gtten yicektir lütfen geç kalmayın.\"\r\n}\r\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseUrl}}/appointments/3/send-reminder",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"appointments",
+								"3",
+								"send-reminder"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Send Note",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjMsImlhdCI6MTc0MzYxMDEzNiwiZXhwIjoxNzQ0OTA2MTM2fQ.ati3gcGN0J64kF9hm5-tOCqS8vsQqx4upD63rgGxueI",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"url": {
+							"raw": "{{baseUrl}}/appointments/:appointmentId/send-note",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"appointments",
+								":appointmentId",
+								"send-note"
+							],
+							"variable": [
+								{
+									"key": "appointmentId",
+									"value": ""
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Cancel Appoitment By Provider",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjEsImlhdCI6MTc0MTM4NDY0MiwiZXhwIjoxNzQyNjgwNjQyfQ.mjiBLXS82fUjy-bdpj8zaGW3tIIqXDTo6yz_H_UeYRA",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"appointmentId\": 19,\r\n  \"reason\":\"Cancelled\"\r\n}\r\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseUrl}}/appointments/cancel/client",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"appointments",
+								"cancel",
+								"client"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Approve Apointment",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjEsImlhdCI6MTc0MTM4NDY0MiwiZXhwIjoxNzQyNjgwNjQyfQ.mjiBLXS82fUjy-bdpj8zaGW3tIIqXDTo6yz_H_UeYRA",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"appointmentId\": 19\r\n}\r\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseUrl}}/appointments/approve/client",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"appointments",
+								"approve",
+								"client"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Cancel Appoitment By Client",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjMsImlhdCI6MTc0MzYxMDEzNiwiZXhwIjoxNzQ0OTA2MTM2fQ.ati3gcGN0J64kF9hm5-tOCqS8vsQqx4upD63rgGxueI",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"appointmentId\": 15,\r\n  \"reason\":\"Saanne\"\r\n}\r\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseUrl}}/appointments/cancel/client",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"appointments",
+								"cancel",
+								"client"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get Appointments provider",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseUrl}}/appointments/list?page=1&limit=20&status=cancelled",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"appointments",
+								"list"
+							],
+							"query": [
+								{
+									"key": "page",
+									"value": "1"
+								},
+								{
+									"key": "limit",
+									"value": "20"
+								},
+								{
+									"key": "keyword",
+									"value": "dra",
+									"disabled": true
+								},
+								{
+									"key": "status",
+									"value": "cancelled"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get Filled Appointments",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseUrl}}/appointments/filled-appointments/1",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"appointments",
+								"filled-appointments",
+								"1"
+							],
+							"query": [
+								{
+									"key": "keyword",
+									"value": "dra",
+									"disabled": true
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Stripe",
+			"item": [
+				{
+					"name": "Cancel Subs",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"url": {
+							"raw": "{{baseUrl}}/subscriptions/cancel",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"subscriptions",
+								"cancel"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "New Request Copy",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"priceId\": \"price_1RCqYwQlKIoWRWafz8umMJY9\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseUrl}}/subscriptions/subscribe",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"subscriptions",
+								"subscribe"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	],
+	"auth": {
+		"type": "bearer",
+		"bearer": [
+			{
+				"key": "token",
+				"value": "{{token}}",
+				"type": "string"
+			}
+		]
+	},
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"packages": {},
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"packages": {},
+				"exec": [
+					"// Parse the response JSON\r",
+					"let response = pm.response.json();\r",
+					"\r",
+					"// Extract the token (adjust 'token' to match your API response field)\r",
+					"let token = response.token;\r",
+					"\r",
+					"// Set the token as an environment or collection variable\r",
+					"if (token) {\r",
+					"    pm.collectionVariables.set(\"token\", token); // Set for collection\r",
+					"    // Alternatively, for environment: pm.environment.set(\"token\", token);\r",
+					"    console.log(\"Token updated successfully:\", token);\r",
+					"} else {\r",
+					"    console.error(\"Token not found in the response!\");\r",
+					"}\r",
+					"\r",
+					"\r",
+					"let refreshToken= response.refreshToken\r",
+					"\r",
+					"if (refreshToken) {\r",
+					"    pm.collectionVariables.set(\"refreshToken\", refreshToken); // Set for collection\r",
+					"    // Alternatively, for environment: pm.environment.set(\"token\", token);\r",
+					"    console.log(\"refreshToken updated successfully:\", refreshToken);\r",
+					"} else {\r",
+					"    console.error(\"refreshToken not found in the response!\");\r",
+					"}"
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"key": "baseUrl",
+			"value": "http://localhost:3000",
+			"type": "string"
+		},
+		{
+			"key": "token",
+			"value": "",
+			"type": "string"
+		},
+		{
+			"key": "refreshToken",
+			"value": "",
+			"type": "string"
+		}
+	]
+}

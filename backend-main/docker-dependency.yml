@@ -1,0 +1,26 @@
+services:
+  db:
+    container_name: telewellness_hub
+    image: postgres:latest
+    ports:
+      - '5432:5432'
+    environment:
+      - POSTGRES_USER=telewellness_hub
+      - POSTGRES_PASSWORD=Telewellness01*
+      - POSTGRES_DB=telewellness_hub
+    volumes:
+      - postgres-review-data:/var/lib/postgresql/data
+    networks:
+      - bridge
+    healthcheck:
+      test: ['CMD-SHELL', 'pg_isready -U telewellness_hub || exit 1']
+      interval: 30s
+      timeout: 10s
+      retries: 5
+
+volumes:
+  postgres-review-data:
+
+networks:
+  bridge:
+    driver: bridge

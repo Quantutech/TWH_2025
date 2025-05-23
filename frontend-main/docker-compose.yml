@@ -1,0 +1,25 @@
+services:
+  telewellness-hub-frontend:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    logging:
+      driver: "json-file"
+      options:
+        max-size: "10m"
+        max-file: "3"  
+    container_name: telewellness-hub-frontend
+    ports:
+      - "3001:3001"
+      - "3002:3002"
+      - "3003:3003"
+      - "3004:3004"
+    environment:
+      - NODE_ENV=production
+    restart: unless-stopped
+    networks:
+      - telewellness-network
+
+networks:
+  telewellness-network:
+    driver: bridge

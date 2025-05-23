@@ -1,0 +1,145 @@
+<mjml>
+  <mj-head>
+    <mj-font
+      name="Inter"
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap"
+    />
+    <mj-attributes>
+      <mj-all font-family="Inter, sans-serif" />
+      <mj-text font-size="16px" color="#4A5568" line-height="24px" />
+      <mj-button
+        background-color="#4F88FF"
+        color="#ffffff"
+        font-weight="600"
+        border-radius="6px"
+        padding="16px 24px"
+        font-size="16px"
+      />
+    </mj-attributes>
+    <mj-style>
+      .link-title {
+        color: #1E40AF;
+        text-decoration: none;
+        font-weight: 600;
+      }
+      .resource-description {
+        color: #356985;
+        margin-top: 4px;
+      }
+    </mj-style>
+  </mj-head>
+  <mj-body background-color="#ffffff">
+    <!-- Header Logo -->
+    <mj-section padding="24px">
+      <mj-column>
+        <mj-image
+          src="cid:logo_cid"
+          alt="TeleWellness Hub Logo"
+          width="200px"
+          height="20px"
+          align="left"
+        />
+      </mj-column>
+    </mj-section>
+
+    <!-- Featured Image -->
+    <mj-section padding="0 24px">
+      <mj-column>
+        <mj-image
+          src="cid:featured_image"
+          alt="Welcome Image"
+          width="600px"
+          border-radius="8px"
+        />
+      </mj-column>
+    </mj-section>
+
+    <!-- Main Content -->
+    <mj-section padding="0 24px">
+      <mj-column>
+        <mj-text font-size="24px" color="#000" font-weight="700">
+          Welcome to Untitled
+        </mj-text>
+        
+        <mj-text color="#356985">
+          We're excited to welcome you to Untitled and we're even more excited about what we've got planned. You're already on your way to creating beautiful visual products.
+        </mj-text>
+        
+        <mj-text color="#356985">
+          Whether you're here for your brand, for a cause, or just for fun — welcome! If there's anything you need, we'll be here every step of the way.
+        </mj-text>
+
+        <!-- Resource Links -->
+        <mj-text padding-top="20px">
+          <a href="#" class="link-title">Untitled changelog →</a>
+          <div class="resource-description">Weekly new updates and improvements to Untitled.</div>
+        </mj-text>
+
+        <mj-text padding-top="20px">
+          <a href="#" class="link-title">Follow us on Twitter →</a>
+          <div class="resource-description">Stay up-to-date with the latest announcements and jobs.</div>
+        </mj-text>
+
+        <mj-text padding-top="20px">
+          <a href="#" class="link-title">Why we're building Untitled →</a>
+          <div class="resource-description">Untitled is a new standard of design system and UI kit.</div>
+        </mj-text>
+
+        <!-- Contact Info -->
+        <mj-text padding-top="30px" color="#356985">
+          Thanks for signing up. If you have any questions, send us a message at <a href="mailto:hi@untitledui.com" style="color: #3978D7">hi@untitledui.com</a> or on <a href="#" style="color: #3978D7">Twitter</a>. We'd love to hear from you.
+        </mj-text>
+
+        <mj-text color="#356985">
+          — The team
+        </mj-text>
+
+        <mj-button href="#" align="left">
+          Get started
+        </mj-button>
+      </mj-column>
+    </mj-section>
+
+    <!-- Footer -->
+    <mj-section padding="40px 24px 24px 24px">
+      <mj-column>
+        <mj-text font-size="13px" color="#356985">
+          This email was sent to
+          <a href="mailto:olivia@untitledui.com" style="color: #3978D7">olivia@untitledui.com</a>. If you'd rather not receive this kind of email, you can
+          <a href="#" style="color: #3978D7">unsubscribe</a> or
+          <a href="#" style="color: #3978D7">manage your email preferences</a>.
+        </mj-text>
+        <mj-text font-size="13px" color="#356985">
+          © 2077 TeleWellness Hub, 100 Smith Street, Melbourne VIC 3000
+        </mj-text>
+      </mj-column>
+    </mj-section>
+
+    <!-- Bottom Logo + Social Media -->
+    <mj-section padding="0 24px 48px 24px">
+      <mj-column width="50%">
+        <mj-image
+          src="cid:logo_cid"
+          alt="TeleWellness Hub"
+          width="200px"
+          height="20px"
+          align="left"
+        />
+      </mj-column>
+      <mj-column width="50%" padding-top="10px">
+        <mj-social
+          font-size="15px"
+          icon-size="20px"
+          mode="horizontal"
+          align="right"
+          padding="0"
+          padding-top="10px"
+        >
+          <mj-social-element href="#" src="cid:twitter_cid" padding="0 8px"/>
+          <mj-social-element href="#" src="cid:facebook_cid" padding="0 8px"/>
+          <mj-social-element href="#" src="cid:instagram_cid" padding="0 8px"/>
+        </mj-social>
+      </mj-column>
+    </mj-section>
+  </mj-body>
+</mjml> 

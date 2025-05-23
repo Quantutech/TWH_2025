@@ -1,0 +1,259 @@
+import * as bcrypt from 'bcrypt';
+import { OAuth2Client } from 'google-auth-library';
+import slugify from 'slugify';
+import OauthConfig from '../../configs/ouath2-config';
+import { emailLayoutAttachments } from '../../consts/email-attachments';
+import Inject from '../../decorators/inject';
+import Service from '../../decorators/service';
+import { ClientRegisterDTO } from '../../dtos/client/auth/register.dto';
+import { BadRequestError, NotFoundError } from '../../errors/custom-errors';
+import AdminRepository from '../../repositories/admin-repository';
+import ClientRepository from '../../repositories/client-repository';
+import ProviderRepository from '../../repositories/provider-repository';
+import Handlebars from '../core/handlebars';
+import MailService from '../mail-service';
+
+@Service()
+export default class ClientAuthService {
+  private readonly SALT_ROUNDS = 10;
+  private readonly googleProvider: OAuth2Client;
+
+  constructor(
+    @Inject() private readonly providerRepository: ProviderRepository,
+    @Inject() private readonly clientRepository: ClientRepository,
+    @Inject() private readonly adminRepository: AdminRepository,
+    @Inject() private readonly mailService: MailService,
+    @Inject() private readonly handleService: Handlebars
+  ) {
+    this.googleProvider = new OAuth2Client({
+      clientId: OauthConfig.clientId,
+      clientSecret: OauthConfig.clientSecret,
+      redirectUri: OauthConfig.redirectUri,
+    });
+  }
+
+  public async parseHandlebar(templateName: string, data: object = {}) {
+    return this.handleService.parse(templateName, data);
+  }
+
+  public async sendWithLayoutEmail(
+    email: string,
+    subject: string,
+    html: string
+  ): Promise<void> {
+    await this.mailService.sendEmail(
+      email,
+      subject,
+      html,
+      emailLayoutAttachments
+    );
+  }
+
+  public async login(email: string, password: string) {
+    const user = await this.clientRepository.findByEmail(email);
+    if (!user)
+      throw new BadRequestError('This email does not match our records!');
+
+    const isPasswordValid = await this.isPasswordValid(password, user.password);
+
+    if (!isPasswordValid) throw new BadRequestError('Invalid password');
+    if (!user.isEmailVerified)
+      throw new BadRequestError('You need to verify your email');
+    return user;
+  }
+
+  public async findByEmail(email: string) {
+    const user = await this.clientRepository.findByEmail(email);
+    if (!user)
+      throw new NotFoundError('This email does not match our records!');
+
+    return user;
+  }
+
+  public async register(client: ClientRegisterDTO) {
+    const isEmailTaken = await Promise.any([
+      this.providerRepository.findByEmail(client.email),
+      this.clientRepository.findByEmail(client.email),
+      this.adminRepository.findByEmail(client.email),
+    ]);
+    
+    const emailTaken = !!isEmailTaken;
+
+    if (emailTaken) {
+      throw new BadRequestError('This email is already in use!');
+    }
+
+    client.password = await this.hashPassword(client.password);
+
+    const baseSlug = slugify(`${client.firstName} ${client.lastName}`, {
+      lower: true,
+      strict: true,
+      trim: true,
+    });
+
+    let profileSlug = baseSlug;
+    let isUnique = false;
+    let counter = 1;
+
+    while (!isUnique) {
+      const existingSlug = await this.clientRepository.findOne({
+        where: { profileSlug },
+      });
+      if (!existingSlug) {
+        isUnique = true;
+      } else {
+        profileSlug = `${client.firstName.toLowerCase()}-${client.lastName.toLowerCase()}-${counter}`;
+        counter++;
+      }
+    }
+
+    client.profileSlug = profileSlug;
+
+    return await this.clientRepository.create(client as any);
+  }
+
+  public async checkUser(email: string) {
+    const client = await this.clientRepository.findByEmail(email);
+    if (!client) return;
+    return client;
+  }
+
+  public async verifyEmail(email: string) {
+    // Find user by email and update emailVerified to true
+    return this.clientRepository.updateEmailVerified(email);
+  }
+
+  // Password validation function
+  public async isPasswordValid(
+    password: string,
+    hashedPassword: string
+  ): Promise<boolean> {
+    // First check using bcrypt's comparison (using email as salt)
+    const isValid = await this.comparePassword(password, hashedPassword);
+    if (isValid) return true;
+    return false;
+  }
+
+  // Generate password hash using email as salt
+  public async hashPassword(password: string): Promise<string> {
+    // Use email as salt when hashing the password
+    const hashedPassword = await bcrypt.hash(password, this.SALT_ROUNDS);
+    return hashedPassword;
+  }
+
+  // Compare password with hashed password
+  public async comparePassword(
+    password: string,
+    hashedPassword: string
+  ): Promise<boolean> {
+    return bcrypt.compare(password, hashedPassword);
+  }
+
+  public async googleLogin() {
+    const scopes = [
+      'https://www.googleapis.com/auth/userinfo.profile',
+      'https://www.googleapis.com/auth/userinfo.email',
+    ];
+
+    const url = this.googleProvider.generateAuthUrl({
+      access_type: 'offline',
+      scope: scopes,
+      include_granted_scopes: true,
+    });
+
+    return url;
+  }
+
+  public async googleCallback(code: string) {
+    try {
+      const { tokens } = await this.googleProvider.getToken(code);
+      this.googleProvider.setCredentials(tokens);
+
+      const userInfoProvider = await this.googleProvider.request({
+        url: 'https://www.googleapis.com/oauth2/v3/userinfo',
+      });
+
+      const userData: any = userInfoProvider.data;
+
+      let client = await this.clientRepository.findByEmail(userData.email);
+
+      if (!client) {
+        client = await this.clientRepository.create({
+          email: userData.email,
+          firstName: userData.given_name,
+          lastName: userData.family_name,
+          password: await this.hashPassword(Math.random().toString(36)),
+          emailVerified: true,
+        });
+      }
+
+      return client;
+    } catch (error) {
+      throw new BadRequestError('Failed to authenticate with Google');
+    }
+  }
+
+  public async getUserWithId(id: number) {
+    return this.clientRepository.findById(id);
+  }
+
+  public async updateUserPasswordById(id: number, password: string) {
+    return this.clientRepository.updatePasswordById(id, password);
+  }
+
+  public async updatePasswordByEmail(email: string, password: string) {
+    return this.clientRepository.updatePasswordByEmail(email, password);
+  }
+
+  public async verifyPassword(
+    id: number,
+    currentPassword: string
+  ): Promise<boolean> {
+    const user = await this.clientRepository.findOne({ where: { id } });
+    if (!user) {
+      throw new NotFoundError('User not found');
+    }
+    return bcrypt.compare(currentPassword, user.password);
+  }
+
+  async sendEmailVerificationCode(clientId: number) {
+    const verificationCode = Math.floor(1000 + Math.random() * 9000).toString();
+
+    const client = await this.clientRepository.findById(clientId);
+    if (!client) {
+      throw new NotFoundError('Client not found');
+    }
+
+    await this.clientRepository.update(
+      { where: { id: clientId } },
+      { verificationCode }
+    );
+
+    return { verificationCode, client };
+  }
+
+  async verifyEmailChange(
+    id: number,
+    verificationCode: string,
+    email: string
+  ): Promise<boolean> {
+    const client = await this.clientRepository.findById(id);
+    if (!client) {
+      throw new NotFoundError('Client not found');
+    }
+
+    if (
+      client.verificationCode &&
+      client.verificationCode !== verificationCode
+    ) {
+      throw new BadRequestError('Invalid verification code');
+    }
+
+    await this.clientRepository.update(
+      { where: { id } },
+      { verificationCode: null, email }
+    );
+
+    return true;
+  }
+}
